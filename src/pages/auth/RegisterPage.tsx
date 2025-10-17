@@ -1,26 +1,29 @@
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useAuth } from "reactfire";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import CardFooterAuth from "@/components/ui/CardFooterAuth";
+import { useAuthActions } from "@/hooks/use-auth-actions";
 
 const RegisterPage = () => {
-  //Para habilitar el btn de Google
-  const auth = useAuth();
-
-  const handleClickGoogle = async () => {
-    try {
-      //Crear un nuevo provider
-      const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-      console.log("Usuario inicio sesión exitosamente");
-    } catch (error) {
-      console.error("Error al iniciar sesión con Google:", error);
-    }
-  };
+  const { loading } = useAuthActions();
 
   return (
-    <div>
-      <h1>Register</h1>
-      <button onClick={handleClickGoogle}>Iniciar sesión con Google</button>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Registrarse</CardTitle>
+        <CardDescription>
+          Puedes registrarte con tu usuario o con Google.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>...</CardContent>
+      <CardFooterAuth type="register" loading={loading} />
+    </Card>
   );
 };
 
