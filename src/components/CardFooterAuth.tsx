@@ -1,6 +1,6 @@
 import { toast } from "sonner";
-import { Button } from "./button";
-import { CardFooter } from "./card";
+import { Button } from "./ui/button";
+import { CardFooter } from "./ui/card";
 import { useAuthActions } from "@/hooks/use-auth-actions";
 import { Mail } from "lucide-react";
 import { Link } from "react-router";
@@ -31,6 +31,7 @@ const CardFooterAuth = ({ type, loading }: Props) => {
         onClick={handleLoginWithGoogle}
         className="w-full"
         disabled={loading}
+        variant="outline"
       >
         <Mail className="mr-2" />
         {isLogin ? "Login con Google" : "Registrarse con Google"}
