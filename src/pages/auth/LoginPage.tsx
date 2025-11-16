@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import CardFooterAuth from "@/components/CardFooterAuth";
 import { useAuthActions } from "@/hooks/use-auth-actions";
-import { loginZodSchema, type loginZodSchemaType } from "@/lib/loginZodSchema";
+import { loginZodSchema, type loginZodSchemaType } from "@/lib/zodSchemas";
 
 import { Button } from "@/components/ui/button";
 import {

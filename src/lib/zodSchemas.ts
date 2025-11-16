@@ -34,3 +34,16 @@ export const profileZodSchema = z.object({
 });
 
 export type ProfileZodSchemaType = z.infer<typeof profileZodSchema>;
+
+export const taskZodSchema = z.object({
+  title: z
+    .string()
+    .min(1, "Título requerido")
+    .max(80, "El título no puede superar los 80 caracteres"),
+  description: z
+    .string()
+    .max(500, "La descripción no puede superar los 500 caracteres")
+    .optional(),
+});
+
+export type TaskZodSchemaType = z.infer<typeof taskZodSchema>;

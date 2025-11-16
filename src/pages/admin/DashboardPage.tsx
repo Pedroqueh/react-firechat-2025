@@ -9,7 +9,7 @@ const DashboardPage = () => {
   return (
     <div className="">
       <h1>Dashboard Page</h1>
-      <p>Bienvenido, {user?.displayName || "Invitado"}!</p>
+      <p>Bienvenido, {user!.displayName || "Invitado"}!</p>
       <p>Email: {user?.email || "No informado"}</p>
       <Button onClick={logout}>Cerrar sesión</Button>
     </div>
